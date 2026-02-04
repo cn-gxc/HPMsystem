@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学生家务劳动实践管理系统</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <!-- 这里只放HTML结构，CSS和JS都放在外部文件 -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-hands-helping"></i>
+                <div>
+                    <h1>学生家务劳动实践管理系统</h1>
+                    <p class="subtitle">GitHub托管版本</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- 数据库配置区域 -->
+        <div class="config-section" id="configSection">
+            <h2><i class="fas fa-database"></i> 数据库配置</h2>
+            <p>首次使用需要配置数据库连接信息：</p>
+            
+            <div class="config-step">
+                <h3>步骤1：获取Supabase API信息</h3>
+                <p>1. 访问 <a href="https://supabase.com" target="_blank">supabase.com</a> 注册账号</p>
+                <p>2. 创建项目后，进入设置 → API页面</p>
+                <p>3. 复制"URL"和"anon public key"</p>
+            </div>
+            
+            <div class="config-step">
+                <h3>步骤2：填写连接信息</h3>
+                <div class="config-input">
+                    <input type="text" id="supabaseUrl" placeholder="请输入Supabase项目URL">
+                    <input type="text" id="supabaseKey" placeholder="请输入anon public key">
+                    <button id="saveConfig">保存配置</button>
+                </div>
+            </div>
+            
+            <div class="config-step">
+                <h3>步骤3：初始化数据库（只需一次）</h3>
+                <button id="initTables">初始化数据库表</button>
+                <div id="initStatus" class="config-status"></div>
+            </div>
+        </div>
+
+        <!-- 登录界面 -->
+        <div class="login-section" id="loginSection" style="display: none;">
+            <!-- 保持原有的登录HTML -->
+        </div>
+
+        <!-- 学生界面 -->
+        <div class="main-content" id="studentContent" style="display: none;">
+            <!-- 保持原有的学生界面HTML -->
+        </div>
+
+        <!-- 教师界面 -->
+        <div class="main-content" id="teacherContent" style="display: none;">
+            <!-- 保持原有的教师界面HTML -->
+        </div>
+
+        <!-- 弹窗 -->
+        <div class="modal" id="reviewModal" style="display: none;">
+            <!-- 保持原有的弹窗HTML -->
+        </div>
+
+        <!-- 通知 -->
+        <div class="notification" id="notification"></div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>学生家务劳动实践管理系统 &copy; 2023</p>
+            <p>托管于GitHub Pages | 使用Supabase数据库</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
